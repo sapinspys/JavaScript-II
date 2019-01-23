@@ -29,17 +29,22 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  const counterMachine = {
-    num: 1,
-    increment() {
-      console.log(num);
+  let num = 0;
+  return counterMachine = {
+    increment: function() {
       num += 1;
-    },
-    decrement() {
       console.log(num);
+    },
+    decrement: function() {
       num -= 1;
-    } 
+      console.log(num);
+    }
   }
 };
 
-const newCounterMachine = counterMachine();
+const newCounterMachine = counterFactory();
+console.log('\n')
+newCounterMachine.increment()
+newCounterMachine.increment()
+newCounterMachine.increment()
+newCounterMachine.decrement()
